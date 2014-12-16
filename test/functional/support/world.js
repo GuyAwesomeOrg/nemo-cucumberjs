@@ -7,7 +7,6 @@ var Nemo = require('nemo'),
     config = {
         "view": ['paypalRegistration']
     };
-process.env["PATH"] += ":"+process.cwd()+"/test/functional/resources/chrome_binary"
 process.env.nemoData = JSON.stringify({
     targetBrowser: "firefox",
     targetServer: "localhost",
