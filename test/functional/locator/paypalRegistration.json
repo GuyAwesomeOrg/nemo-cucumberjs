@@ -1,0 +1,18 @@
+{
+    "continue":{
+        "locator":"a#personalSignUpForm",
+        "type":"css"
+    },
+    "email":{
+        "locator":"email",
+        "type":"id"
+    },
+    "password":{
+        "locator":"password",
+        "type":"id"
+    },
+    "confirmPassword":{
+        "locator":"confirmPassword",
+        "type":"id"
+    }
+}

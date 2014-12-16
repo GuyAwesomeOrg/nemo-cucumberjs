@@ -1,0 +1,29 @@
+{
+  "name": "sample project demonstrating use of cucumberjs with nemo",
+  "version": "0.1.0",
+  "description": "sample cucumber js project",
+  "author": "Nilesh Kulkarni <nikulkarni@paypal.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "cucumber": "^0.4.4",
+    "grunt": "^0.4.5",
+    "grunt-config-dir": "^0.3.2",
+    "grunt-cucumberjs": "^0.5.0",
+    "nemo": "^0.2.5",
+    "nemo-drivex": "^0.1.5",
+    "nemo-locatex": "^0.1.1",
+    "nemo-view": "^0.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paypal/nemo-cucumberjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paypal/nemo-cucumberjs/issues"
+  },
+  "homepage": "https://github.com/paypal/nemo-cucumberjs"
+}

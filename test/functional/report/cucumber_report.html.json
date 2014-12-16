@@ -1,0 +1,56 @@
+[
+	{
+		"id": "In-order-to-use-PayPal-as-payment-method",
+		"name": "In order to use PayPal as payment method",
+		"description": "As a user\nI need a feature to register a PayPal account",
+		"line": 1,
+		"keyword": "Feature",
+		"uri": "/Users/nikulkarni/Documents/workspace/paypal-repo/nemo-cucumberjs/test/functional/features/paypalreg.feature",
+		"elements": [
+			{
+				"name": "",
+				"id": "In-order-to-use-PayPal-as-payment-method;",
+				"line": 5,
+				"keyword": "Scenario",
+				"description": "",
+				"type": "scenario",
+				"steps": [
+					{
+						"name": "I launch PayPal registration page",
+						"line": 6,
+						"keyword": "Given ",
+						"result": {
+							"status": "undefined"
+						},
+						"match": {}
+					},
+					{
+						"name": "I enter the details",
+						"line": 7,
+						"keyword": "When ",
+						"result": {
+							"status": "undefined"
+						},
+						"match": {}
+					},
+					{
+						"name": "I am able to create an account",
+						"line": 8,
+						"keyword": "Then ",
+						"result": {
+							"status": "undefined"
+						},
+						"match": {}
+					}
+				],
+				"passed": 0,
+				"failed": 0,
+				"notdefined": 3,
+				"skipped": 0
+			}
+		],
+		"passed": 0,
+		"failed": 0,
+		"relativeFolder": ""
+	}
+]
