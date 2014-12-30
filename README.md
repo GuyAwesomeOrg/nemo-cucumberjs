@@ -11,8 +11,6 @@ npm install -g cucumber
 ```
 # setup
 Make sure the SELENIUM_JAR is setup correctly. Download selenium stand alone server from [here][4]. 
-As of this edit 2.42.2 version did not work for firefox, so I would suggest 2.42.1 unless anything higher than 2.42.2 is
-available.
 
 Create a symbolic lunk
 
