@@ -6,7 +6,9 @@ var myHooks = function () {
 
     this.World = require('../support/world.js').World;
     this.Before(function (scenario, callback) {
-        this.scenario = scenario;
+      if(scenario.isFailed()){
+         console.log('Scenario failed');
+      }
         callback();
     });
 
