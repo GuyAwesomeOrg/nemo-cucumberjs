@@ -6,7 +6,7 @@ var paypalRegistrationStepDef = function () {
     this.World = require("../support/world.js").World,
         paypalreg = require('../lib/paypalreg');
     this.Given(/^I launch PayPal registration page$/, function (callback) {
-        this.nemo.driver.get(this.url);
+        this.nemo.driver.get(this.nemo.data.targetBaseUrl);
         callback();
     });
 

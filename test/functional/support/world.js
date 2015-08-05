@@ -2,26 +2,16 @@
  * Created by nikulkarni on 8/18/14.
  */
 
-var Nemo = require('nemo'),
-    plugins = require('../config/nemo-plugins'),
-    config = {
-        "view": ['paypalRegistration']
-    };
-process.env.nemoData = JSON.stringify({
-    targetBrowser: "firefox",
-    targetServer: "localhost",
-    serverProps: {"port": 4444},
-    seleniumJar: "/usr/local/bin/selenium-server-standalone.jar",
-    targetBaseUrl: "https://www.paypal.com",
-    autoBaseDir:process.cwd() + "/" + "test/functional"
-});
+var Nemo = require('nemo');
 
 var WorldConstructor = function WorldConstructor(callback) {
-    this.url = 'https://www.paypal.com/signup/account#personalAccountSignUp';
-    var that = this;
-    (new Nemo(plugins)).setup(config).then(function (cb_nemo) {
-        that.nemo = cb_nemo;
+    var __dirname = process.cwd()+"/test/functional";
+    this.nemo = new Nemo(__dirname,function(err){
+        if(err) {
+            console.log('There was  error', err);
+            callback(err);
+        }
         callback();
-    })
+    });
 };
 exports.World = WorldConstructor;
