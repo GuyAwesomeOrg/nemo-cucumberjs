@@ -13,7 +13,6 @@ npm install -g cucumber
 This example runs on chrome and already configured to run on OSX. If you are on windows, make sure to add `chromedriver.exe` in your path.
 
 
-```
 Features are written with the [Gherkin][3] syntax. For example in this project you will find, 
 
 ``` gherkin
