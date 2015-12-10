@@ -10,7 +10,7 @@ Install cucumber globally
 npm install -g cucumber
 ```
 # setup
-Make sure the SELENIUM_JAR is setup correctly. Download selenium stand alone server from [here][4]. 
+This example runs on chrome and already configured to run on OSX. If you are on windows, make sure to add `chromedriver.exe` in your path.
 
 Create a symbolic lunk
 

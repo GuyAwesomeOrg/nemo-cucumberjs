@@ -6,7 +6,7 @@
     }
   },
   "driver": {
-    "browser": "firefox"
+    "browser": "chrome"
   },
   "data": {
     "targetBaseUrl" : "https://www.paypal.com/signup/account#personalAccountSignUp"
