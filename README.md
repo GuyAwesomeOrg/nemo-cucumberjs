@@ -2,16 +2,17 @@
 
 sample project demonstrating use of [cucumber.js][1] with [nemo][2]
 
-# Pre-requisite
+# Optional Steps
 
-Install cucumber globally
+- Install cucumber globally. Please make sure to install cucumber>=0.8.0
 
 ```shell
 npm install -g cucumber
 ```
-# setup
-This example runs on chrome and already configured to run on OSX. If you are on windows, make sure to add `chromedriver.exe` in your path.
 
+- This example runs on chrome and already configured to run on OSX. If you are on windows, make sure to add `chromedriver.exe` in your path.
+
+# Overview
 
 Features are written with the [Gherkin][3] syntax. For example in this project you will find, 
 
@@ -26,11 +27,11 @@ Feature: In order to use PayPal as payment method
     Then I am able to create an account
 ```
 World is a constructor function with utility properties, destined to be used in step definitions. It can be found under 
-`test/functional/support/world.js`. `Nemo` object is initialized here in such a way that the plugin configuration, views
+`test/functional/support/world.js`. `Nemo`  is initialized [hooks](test/functional/step_definitions/hooks.js) in such a way that the plugin configuration, views
 etc are available in tests. All helper methods, variables that you want to expose to your tests should be here in 
 world.js
 
-Step definitions is test implementation behind the english feature defined above. It can be found in `test/functional/stepdefs/`
+Step definitions is test implementation behind the english feature defined above. It can be found in [step_definitions](test/functional/step_definitions/paypalRegStepDefs.js)
 
 # How to run tests
 Before running the tests, make sure to run,
@@ -42,9 +43,18 @@ npm install
 Cucumber.js includes a binary file to execute the features. To just run a feature file
 
 ``` shell
-cucumber.js test/functional/features/paypalreg.feature
+DEBUG=nemo* cucumber.js test/functional/features/paypalreg.feature
 ```
-This will output something like,
+
+If you haven't installed cucumber globally, then you could use local cucumber installed under `node_modules/.bin/cucumber.js`
+
+``` shell
+DEBUG=nemo* node_modules/.bin/cucumber.js cucumber.js test/functional/features/paypalreg.feature
+```
+All nemo modules use awesome [debug](https://github.com/visionmedia/debug) library for logging, if you use `DEBUG=nemo*`
+flag with your cucumber command, it will nicely output things happening behind scenes.
+
+Running `paypalreg.feature` like above  will output something like,
 
 ``` javascript
 1 scenario (1 undefined)
@@ -66,9 +76,18 @@ this.Then(/^I am able to create an account$/, function (callback) {
 To run features with corresponding step definitions, run this
 
 ``` shell
-cucumber.js test/functional/features/paypalreg.feature --require test/functional/step_definitions/ --format=pretty
+DEBUG=nemo* cucumber.js test/functional/features/paypalreg.feature --require test/functional/step_definitions/ --format=pretty
 ```
+or
+
+``` shell
+DEBUG=nemo* node_modules/.bin/cucumber.js test/functional/features/paypalreg.feature --require test/functional/step_definitions/ --format=pretty
+```
+
 You could also wrap this as a grunt task using task runners like [grunt-cucumberjs][5]
+
+## Troubleshooting
+
 
 [1]: https://github.com/cucumber/cucumber-js "cucumber.js"
 [2]: https://github.com/paypal/nemo "nemo"
