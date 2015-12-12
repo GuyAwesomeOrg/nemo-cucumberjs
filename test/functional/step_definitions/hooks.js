@@ -1,21 +1,29 @@
 /*global describe:false, it:false, beforeEach:false, afterEach:false*/
 'use strict';
 
+var Nemo = require('nemo');
+var debug = require('debug');
+var log = debug('nemo-cucumberjs:log');
+
 var myHooks = function () {
 
-  this.World = require('../support/world.js').World;
-  this.Before(function (scenario, callback) {
-    process.env["PATH"] += ":" + process.cwd() + "/test/functional/resources/chromedriver"
-    callback();
+  this.World = require('../support/world.js').World
+  this.Before(function (scenario,callback) {
+    var __dirname = process.cwd()+ "/test/functional";
+    this.nemo = new Nemo(__dirname,function(err){
+      if(err) {
+        log("Error is", err);
+        callback(err);
+      }
+      callback();
+    });
   });
 
-  this.After(function (scenario, callback) {
+  this.After(function (scenario,callback) {
     if (scenario.isFailed()) {
       console.log('Scenario failed');
     }
-    this.nemo.driver.quit().then(function () {
-      callback();
-    });
+    this.nemo.driver.quit().then(callback);
   });
 
   this.registerHandler('AfterFeatures', function (event, callback) { //runs after ALL features are executed
