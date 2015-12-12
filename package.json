@@ -1,6 +1,6 @@
 {
   "name": "nemo-cucumberjs",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "sample project with cucumberjs and nemo",
   "author": "Nilesh Kulkarni <nikulkarni@paypal.com>",
   "main": "index.js",
