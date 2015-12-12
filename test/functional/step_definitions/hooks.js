@@ -15,7 +15,6 @@ var myHooks = function () {
         log("Error is", err);
         callback(err);
       }
-      log("There is no error");
       callback();
     });
   });

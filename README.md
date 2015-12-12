@@ -26,10 +26,7 @@ Feature: In order to use PayPal as payment method
     When I enter the details
     Then I am able to create an account
 ```
-World is a constructor function with utility properties, destined to be used in step definitions. It can be found under 
-`test/functional/support/world.js`. `Nemo`  is initialized [hooks](test/functional/step_definitions/hooks.js) in such a way that the plugin configuration, views
-etc are available in tests. All helper methods, variables that you want to expose to your tests should be here in 
-world.js
+World is a constructor function with utility properties, destined to be used in step definitions. It can be found under `test/functional/support/world.js`. `Nemo`  is initialized [hooks](test/functional/step_definitions/hooks.js#L13-L19) in such a way that the plugin configuration, views etc are available in tests. All helper methods, variables that you want to expose to your tests should be here in world.js
 
 Step definitions is test implementation behind the english feature defined above. It can be found in [step_definitions](test/functional/step_definitions/paypalRegStepDefs.js)
 
@@ -86,7 +83,6 @@ DEBUG=nemo* node_modules/.bin/cucumber.js test/functional/features/paypalreg.fea
 
 You could also wrap this as a grunt task using task runners like [grunt-cucumberjs][5]
 
-## Troubleshooting
 
 
 [1]: https://github.com/cucumber/cucumber-js "cucumber.js"
